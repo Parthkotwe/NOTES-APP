@@ -1,5 +1,6 @@
 require('dotenv').config();
-console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("NODE_ENV:", process.env.NODE_ENV); 
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -12,10 +13,14 @@ const Note = require('./models/note.model');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: "*",
-  credentials: true,
-}));
+if (process.env.NODE_ENV === "development") {
+  app.use(cors());
+} else {
+  app.use(cors({
+    origin: ["https://notes-app-six-gules.vercel.app/"],
+    credentials: true,
+  }));
+}
 
 
 app.use(express.json());
