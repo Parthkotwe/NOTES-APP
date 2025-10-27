@@ -4,12 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // important for correct asset paths in preview/build
-  css: {
-    postcss: {
-      plugins: [tailwindcss()],
-    },
-  },
+  base: './', // ✅ correct for preview/build to avoid 404s
   theme: {
     extend: {
       colors: {
@@ -19,4 +14,3 @@ export default defineConfig({
     },
   },
 })
-
