@@ -32,9 +32,10 @@ const Login = () => {
     try {
       console.log("🔥 sending login:", { email, password });
       const response = await axiosInstance.post("/login", { email, password });
-
+      console.log(response);
       if (response.data && response.data.accessToken) {
         // Save token consistently
+        console.log("login succesfull",response);
         localStorage.setItem("accessToken", response.data.accessToken);
         alert("Login successful");
         navigate("/dashboard");
