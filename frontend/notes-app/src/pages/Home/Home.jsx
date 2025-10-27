@@ -3,7 +3,7 @@ import { MdAdd } from "react-icons/md";
 import Modal from "react-modal";
 import AddEditNotes from "./AddEditNotes";
 import NoteCard from "../../components/Cards/NoteCard";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../axiosInstantce";
 import Toast from "../../components/ToastMessage/Toast";
