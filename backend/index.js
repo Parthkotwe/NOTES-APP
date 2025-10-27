@@ -11,7 +11,13 @@ const Note = require('./models/note.model');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({origin: "*"}));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",       // local dev
+    "https://notes-app-frontend.vercel.app" // your deployed frontend URL
+  ],
+  credentials: true, // allows cookies, tokens etc.
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
