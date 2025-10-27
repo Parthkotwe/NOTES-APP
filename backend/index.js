@@ -15,9 +15,12 @@ const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === "development") {
   app.use(cors());
+  redentials: true
 } else {
+console.log("🚀 CORS for deployed frontend");
+  console.log("✅ Origin allowed: https://notes-app-six-gules.vercel.app");
   app.use(cors({
-    origin: ["https://notes-app-six-gules.vercel.app/"],
+    origin: ["https://notes-app-six-gules.vercel.app"],
     credentials: true,
   }));
 }
