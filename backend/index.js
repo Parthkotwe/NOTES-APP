@@ -8,12 +8,12 @@ const {authenticateToken} = require('./utilities');
 const User = require('./models/user.model');
 const Note = require('./models/note.model');
 
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(cors({origin: "*"}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 mongoose.set('strictQuery', true);
 
