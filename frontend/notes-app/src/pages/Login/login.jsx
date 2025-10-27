@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { validateEmail } from '../../utils/helper';
-import Navbar from '../../components/Navbar/navbar';
+import Navbar from '../../components/Navbar/Navbar';
 import PasswordInput from '../../components/Input/PasswordInput';
 import axiosInstance from '../../axiosInstantce'; // check spelling
 
