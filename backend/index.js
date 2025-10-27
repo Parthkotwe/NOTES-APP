@@ -14,16 +14,20 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === "development") {
-  app.use(cors());
-  redentials: true
+  console.log("🧑‍💻 Running in development mode");
+  app.use(cors({
+    origin: "http://localhost:5173",   // ✅ added explicit origin for dev
+    credentials: true,                 // ✅ fixed typo + moved inside config
+  }));
 } else {
-console.log("🚀 CORS for deployed frontend");
-  console.log("✅ Origin allowed: https://notes-app-six-gules.vercel.app");
+  console.log("🚀 Running in production mode");
+  console.log("✅ CORS allowed for: https://notes-app-six-gules.vercel.app");
   app.use(cors({
     origin: ["https://notes-app-six-gules.vercel.app"],
-    credentials: true,
+    credentials: true,                 // ✅ same as before (correct)
   }));
 }
+
 
 
 app.use(express.json());
