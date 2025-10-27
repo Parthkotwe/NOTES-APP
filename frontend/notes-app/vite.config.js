@@ -4,13 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // ✅ correct for preview/build to avoid 404s
-  theme: {
-    extend: {
-      colors: {
+  theme:{
+    extends:{
+      colors:{
         primary: "#2885ff",
         secondary: "#EF863E",
-      },
-    },
-  },
+      }
+    }
+  }
 })
