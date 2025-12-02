@@ -38,7 +38,7 @@ mongoose.set('strictQuery', true);
 async function db(){
     try{
         await mongoose.connect(process.env.MONGO_URL);
-        console.log('Database Connected Successfully');
+        console.log('Database Connected Successfully !');
         app.listen(PORT, () => console.log(`Server started at ${PORT}`)); 
     }
     catch(err){
